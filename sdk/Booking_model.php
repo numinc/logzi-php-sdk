@@ -3,7 +3,7 @@
 /**
  * Booking
  *
- * @link https://www.billzon.com/help-center/dokumentacio/keszletkezeles-2/raktari-bevet-6
+ * @link https://www.logzi.com/help-center/dokumentacio/keszletkezeles-2/raktari-bevet-6
  * @author info@numinc.com
 **/
 
