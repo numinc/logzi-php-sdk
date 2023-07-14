@@ -1,6 +1,6 @@
-# billzon-php-sdk
+# logzi-php-sdk
 
-billzon-php-sdk is a PHP library for [billzon ERP](https://www.billzon.com/).
+logzi-php-sdk is a PHP library for [logzi ERP](https://www.logzi.com/).
 
 ## Usage
 
@@ -21,7 +21,7 @@ $booking_list = $booking_client->get_list(array(
 print_r($booking_list);
 ```
 
-Please find the API endpoints [here](https://www.billzon.com/help-center/dokumentacio).
+Please find the API endpoints [here](https://www.logzi.com/help-center/dokumentacio).
 
 ## Contributing
 
@@ -31,6 +31,6 @@ to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ## FAQ
-[Terms and Conditions](https://www.billzon.com/dokumentum/aszf)
+[Terms and Conditions](https://www.logzi.com/dokumentum/aszf)
 
 [Privacy Policies](https://www.numinc.com/dokumentum/adatvedelem)
