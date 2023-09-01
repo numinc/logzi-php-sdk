@@ -2,7 +2,7 @@
 
 class Base_api_model {
 	protected $api_key = "";
-	protected $api_endpoint = "https://www.logzi.com/api/";
+	protected $api_endpoint = "https://www.billzon.com/api/";
 	
 	public function set_api_key($api_key = NULL){
 		$this->api_key = $api_key;

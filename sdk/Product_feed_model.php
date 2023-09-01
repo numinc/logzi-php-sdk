@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Booking
+ * Product_feed
  *
- * @link https://www.logzi.com/erp-rendszer/keszletkezeles-2/raktari-bevet-6
+ * @link https://www.logzi.com/erp-rendszer/beallitasok-8/termek-feed-43
  * @author info@numinc.com
 **/
 
-class Booking_model extends Base_api_model {
+class Product_feed_model extends Base_api_model {
 
     public function __construct($config = array()) {
 		$this->set_api_key($config["api_key"]);
@@ -15,7 +15,7 @@ class Booking_model extends Base_api_model {
 
 	public function get($params = array()){
         try {
-            return $this->call('GET', $this->get_api_endpoint().'booking/get', $params);
+            return $this->call('GET', $this->get_api_endpoint().'product-feed/get', $params);
         } catch(Exception $ex) {  
         }  
           
@@ -24,7 +24,7 @@ class Booking_model extends Base_api_model {
 
 	public function get_list($params = array()){
         try {            
-            return $this->call('GET', $this->get_api_endpoint().'booking/list', $params);
+            return $this->call('GET', $this->get_api_endpoint().'product-feed/list', $params);
         } catch(Exception $ex) {  
         }  
           
@@ -33,7 +33,16 @@ class Booking_model extends Base_api_model {
 
 	function save($params = array()){
         try {
-            return $this->call('POST', $this->get_api_endpoint().'booking/save', $params);
+            return $this->call('POST', $this->get_api_endpoint().'product-feed/save', $params);
+        } catch(Exception $ex) {  
+        }  
+          
+        return FALSE;
+	}
+
+	function save_bulk($params = array()){
+        try {
+            return $this->call('POST', $this->get_api_endpoint().'product-feed/save-bulk', $params);
         } catch(Exception $ex) {  
         }  
           
@@ -42,25 +51,16 @@ class Booking_model extends Base_api_model {
 
 	function delete($params = array()){
 		try {            
-            return $this->call('POST', $this->get_api_endpoint().'booking/delete', $params);
+            return $this->call('POST', $this->get_api_endpoint().'product-feed/delete', $params);
         } catch(Exception $ex) {  
         }  
           
         return FALSE;  
 	}
 
-	function close($params = array()){
+	function import($params = array()){
 		try {            
-            return $this->call('POST', $this->get_api_endpoint().'booking/close', $params);
-        } catch(Exception $ex) {  
-        }  
-          
-        return FALSE;  
-	}
-	
-	function download($params = array()){
-		try {            
-			return $this->call('GET', $this->get_api_endpoint().'booking/download', $params);	
+            return $this->call('GET', $this->get_api_endpoint().'product-feed/import', $params);
         } catch(Exception $ex) {  
         }  
           

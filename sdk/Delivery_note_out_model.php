@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Booking
+ * Delivery_note_out
  *
- * @link https://www.logzi.com/erp-rendszer/keszletkezeles-2/raktari-bevet-6
+ * @link https://www.logzi.com/erp-rendszer/szallitas-4/szallitolevel-24
  * @author info@numinc.com
 **/
 
-class Booking_model extends Base_api_model {
+class Delivery_note_out_model extends Base_api_model {
 
     public function __construct($config = array()) {
 		$this->set_api_key($config["api_key"]);
@@ -15,7 +15,7 @@ class Booking_model extends Base_api_model {
 
 	public function get($params = array()){
         try {
-            return $this->call('GET', $this->get_api_endpoint().'booking/get', $params);
+            return $this->call('GET', $this->get_api_endpoint().'delivery-note-out/get', $params);
         } catch(Exception $ex) {  
         }  
           
@@ -24,7 +24,7 @@ class Booking_model extends Base_api_model {
 
 	public function get_list($params = array()){
         try {            
-            return $this->call('GET', $this->get_api_endpoint().'booking/list', $params);
+            return $this->call('GET', $this->get_api_endpoint().'delivery-note-out/list', $params);
         } catch(Exception $ex) {  
         }  
           
@@ -33,7 +33,7 @@ class Booking_model extends Base_api_model {
 
 	function save($params = array()){
         try {
-            return $this->call('POST', $this->get_api_endpoint().'booking/save', $params);
+            return $this->call('POST', $this->get_api_endpoint().'delivery-note-out/save', $params);
         } catch(Exception $ex) {  
         }  
           
@@ -42,7 +42,7 @@ class Booking_model extends Base_api_model {
 
 	function delete($params = array()){
 		try {            
-            return $this->call('POST', $this->get_api_endpoint().'booking/delete', $params);
+            return $this->call('POST', $this->get_api_endpoint().'delivery-note-out/delete', $params);
         } catch(Exception $ex) {  
         }  
           
@@ -60,7 +60,7 @@ class Booking_model extends Base_api_model {
 	
 	function download($params = array()){
 		try {            
-			return $this->call('GET', $this->get_api_endpoint().'booking/download', $params);	
+			return $this->call('GET', $this->get_api_endpoint().'delivery-note-out/download', $params);	
         } catch(Exception $ex) {  
         }  
           
