@@ -51,7 +51,7 @@ class Delivery_note_in_model extends Base_api_model {
 
 	function close($params = array()){
 		try {            
-            return $this->call('POST', $this->get_api_endpoint().'booking/close', $params);
+            return $this->call('POST', $this->get_api_endpoint().'delivery-note-in/close', $params);
         } catch(Exception $ex) {  
         }  
           

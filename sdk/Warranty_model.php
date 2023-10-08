@@ -51,7 +51,7 @@ class Warranty_model extends Base_api_model {
 
 	function close($params = array()){
 		try {            
-            return $this->call('POST', $this->get_api_endpoint().'booking/close', $params);
+            return $this->call('POST', $this->get_api_endpoint().'warranty/close', $params);
         } catch(Exception $ex) {  
         }  
           
