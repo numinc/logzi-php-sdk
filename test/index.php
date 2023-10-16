@@ -12,4 +12,5 @@ $booking_list = $booking_client->get_list(array(
 		// conditions
 	),
 ));
+
 print_r($booking_list);
