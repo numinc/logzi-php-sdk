@@ -2,6 +2,13 @@
 
 logzi-php-sdk is a PHP library for [logzi ERP](https://www.logzi.com/).
 
+
+## Install
+
+```php
+composer require numinc/logzi-php-sdk:dev-master
+```
+
 ## Usage
 
 ```php
