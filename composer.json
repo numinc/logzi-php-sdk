@@ -4,11 +4,12 @@
     "type": "library",
     "license": "MIT",
     "authors": [
-      { 
+      {
         "name": "NUMINC",
         "email": "info@numinc.com"
       }
     ],
+    "minimum-stability": "stable",
     "keywords": [
       "API",
       "Logzi"
