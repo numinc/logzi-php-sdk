@@ -5,10 +5,9 @@ logzi-php-sdk is a PHP library for [logzi ERP](https://www.logzi.com/).
 ## Usage
 
 ```php
-require 'sdk/Base_api_model.php';
-require 'sdk/Booking_model.php';
+require __DIR__ . '/vendor/autoload.php';
 
-$booking_client = new Booking_model(array(
+$booking_client = new Numinc\Logzi\Booking_model(array(
 	"api_key" => "REPLACE_WITH_YOUR_API_KEY"
 ));
 
