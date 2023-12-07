@@ -24,20 +24,31 @@ class Base_api_model {
 	
 	public function call($method, $url, $data){
 		$curl = curl_init();
+		$content_type = "application/json";
 
 		switch ($method){
 			case "POST":
 				curl_setopt($curl, CURLOPT_POST, 1);
+				$content_type = "application/x-www-form-urlencoded";
 				
 				if ($data){
-					curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+					curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query(
+						array(
+							"data" => json_encode($data["data"]),
+						)
+					));
 				}
 			break;
 			case "PUT":
 				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+				$content_type = "application/x-www-form-urlencoded";
 				
 				if ($data){
-					curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
+					curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query(
+						array(
+							"data" => json_encode($data["data"]),
+						)
+					));		 					
 				}
 			break;
 			default:
@@ -51,7 +62,7 @@ class Base_api_model {
 		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
 			'X-API-KEY: '.$this->api_key,
-			'Content-Type: application/json',
+			'Content-Type: '.$content_type,
 		));
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
