@@ -68,6 +68,15 @@ class Order_in_model extends Base_api_model {
           
         return FALSE;  
 	}
+
+	function save_bulk($params = array()){
+        try {
+            return $this->call('POST', $this->get_api_endpoint().'order-in/save-bulk', $params);
+        } catch(\Exception $ex) {  
+        }  
+          
+        return FALSE;
+	}
 }
 
 

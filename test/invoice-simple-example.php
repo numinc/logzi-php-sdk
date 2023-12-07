@@ -55,13 +55,15 @@ $invoice_save_bulk = $invoice_client->save_bulk(array(
                             "partnumber" =>  "egyedicikkszam-01", // termék vagy szolgáltatás cikkszáma
                             "name" =>  "Egyedi terméknév", // termék vagy szolgáltatás neve
                             "description" =>  "Egyedi termék leírás", // termék vagy szolgáltatás leírása
-                            "price" =>  0.00,  // termék vagy szolgáltatás lista ára (Árlistába bekerül mint alap eladási ár)
+                            "price" =>  0.00,  // termék vagy szolgáltatás kedvezményes ára
                         ),
                         "store_id" => 1, // telephely azonosító
                         "quantity" => 1, // mennyiség
                         "tax_id" => 1, // tétel áfakulcs
                         "comment_top" => "", // tétel megjegyzés
-                        "price" => 150.00 // tétel ára
+                        "price" => 150.00, // tétel ára
+                        "price_sale" =>  150.00,  // termék vagy szolgáltatás lista ára (Árlistába bekerül mint alap eladási ár)
+                        "price_discount" =>  0.00,  // termék vagy szolgáltatás kedvezmény mértéke
                     )
                 ),
             )
