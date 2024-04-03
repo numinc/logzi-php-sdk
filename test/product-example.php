@@ -142,3 +142,24 @@ print_r($product_get);
     "params": null
 }
 */
+
+// termék rögzítés
+$product_save = $product_client->save(array(
+    "data" => array(
+		"type_id" => "1",
+		"name" => "PRODUCT NAME TEST 01",
+		"vtsz" => "",
+		"item" => array(
+			array(
+				"unit_id" => 1,
+				"partnumber" => "PRODUCTPNTEST01",
+				"remove" => 0,
+				"unit_value" => 1,
+				"price" => 1234,
+				"currency_id" => 1,
+			),
+		),
+	),
+));
+
+print_r($product_save);
