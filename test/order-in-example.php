@@ -39,7 +39,17 @@ $order_save = $order_in_client->save(array(
                 "tax_id" => 1, // tétel áfakulcs
                 "comment_top" => "", // tétel megjegyzés
                 "price" => 150.00 // tétel ára
-            )
+            ),
+
+            // szállítási költség
+            1 => array(
+                "product_id" => -2, // SHP10 mindig -2 id-n található, ha ez nem megfelelő szabadon lehet felvenni szállítási szolgáltatásokat
+                "store_id" => 1, // telephely azonosító
+                "quantity" => 1, // mennyiség
+                "tax_id" => 1, // házhozszállítás áfakulcs
+                "comment_top" => "GLS házhozszállítás", // házhozszállítás megjegyzés
+                "price" => 150.00 // házhozszállítás ára
+            ),
         ),
     )
 ));
