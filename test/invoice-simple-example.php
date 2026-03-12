@@ -10,11 +10,16 @@ $invoice_client = new Numinc\Logzi\Invoice_model(array(
 // a save_bulk végpont kétféle adat sémát is elfogad, egy hardcode-hoz hasonlót és egy egyszerűsítettet
 $invoice_save_bulk = $invoice_client->save_bulk(array(
     "data" => array(
-        "params" => array(
-            "close" => 1, // automatikus számla lezárás, nem szükséges meghívni külön a close végpontot
-        ),
         "data" => array(
             1 => array(
+                "params" => array(
+                    "close" => 1, // automatikus számla lezárás, nem szükséges meghívni külön a close végpontot
+                    "tickets" => array( // belépőjegy egyedek megadása, garantálni kell a külső rendszerben az egyediséget
+                        array("code" => "QRXCCC01"),
+                        array("code" => "QRXCCC02"),
+                    ),
+                ),
+                
                 "receipt_type_id" => 8, // bizonylat típusa (8 - számla, 13 - előleg számla, 33 - proformaszámla)
                 "receipt_type_cr_prefix" =>  "SZL", // számlatömb azonosítója (ha nincs megadva alapértelmezett tömbhöz fűzi)
                 "paymod_webname" =>  "Bármi", // fizetési mód webes elnevezése (ha nincs megadva alapértelmezett fizetési móddal kerül rögzítésre)
