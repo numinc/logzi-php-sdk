@@ -9,6 +9,7 @@ $offer_send_client = new Numinc\Logzi\Offer_send_model(array(
 // hardcode végpont
 $offer_send_save = $offer_send_client->save(array(
     "data" => array(
+        "receipt_type_id" => 4, // 4 = Vevői ajánlatküldés, 20 = Szállítói ajánlatküldés
         "paymod_id" => 1, // fizetési mód azonosítója
         "shipping_id" => 1, // szállítási mód azonosítója
         "company_id" => 1, // kiállító cég azonosító (mindig 1)
