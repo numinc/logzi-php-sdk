@@ -143,23 +143,143 @@ print_r($product_get);
 }
 */
 
-// termék rögzítés
+// variációs termék
 $product_save = $product_client->save(array(
     "data" => array(
-		"type_id" => "1",
-		"name" => "PRODUCT NAME TEST 01",
-		"vtsz" => "",
-		"item" => array(
-			array(
-				"unit_id" => 1,
-				"partnumber" => "PRODUCTPNTEST01",
-				"remove" => 0,
-				"unit_value" => 1,
-				"price" => 1234,
-				"currency_id" => 1,
-			),
-		),
-	),
+        "type_id" => "1",
+        "name" => "PRODUCT NAME TEST 01",
+        "vtsz" => "",
+        "item" => array(
+            array(
+                "product_unit_id" => 1,
+                "partnumber" => "PRODUCTPNTEST01",
+                "remove" => 0,
+                "product_unit_value" => 1,
+                "price" => 1234,
+                "currency_id" => 1,
+                "tax_id" => 1,
+                "incoming_price" => 900,
+                "incoming_currency_id" => 1,
+                "incoming_tax_id" => 1,
+                "quantity_min" => 1,
+                "weight_netto" => 0.5,
+                "description" => "Item leírás",
+            ),
+        ),
+    ),
+));
+
+print_r($product_save);
+
+// szolgáltatás
+$product_save = $product_client->save(array(
+    "data" => array(
+        "type_id" => "2",
+        "name" => "SZOLGÁLTATÁS TEST 01",
+        "vtsz" => "",
+        "partnumber" => "SERVICETEST01",
+        "product_unit_id" => 1,
+        "price" => 5000,
+        "currency_id" => 1,
+        "tax_id" => 1,
+        "service_intermediate" => 0,
+    ),
+));
+
+print_r($product_save);
+
+// gyártásos termék
+$product_save = $product_client->save(array(
+    "data" => array(
+        "type_id" => "3",
+        "name" => "GYÁRTÁSOS TERMÉK TEST 01",
+        "vtsz" => "",
+        "partnumber" => "MANUFACTTEST01",
+        "product_unit_id" => 1,
+        "price" => 9990,
+        "currency_id" => 1,
+        "tax_id" => 1,
+        // BOM tételek - komponens termékek és mennyiségük
+        "manufact" => array(
+            array(
+                "product_id" => 123,      // már létező alkotóelem termék id-ja
+                "product_quantity" => 2,
+                "remove" => 0,
+            ),
+            array(
+                "product_id" => 124,
+                "product_quantity" => 1,
+                "remove" => 0,
+            ),
+        ),
+    ),
+));
+
+print_r($product_save);
+
+// virtuális termék - jegy
+$product_save = $product_client->save(array(
+    "data" => array(
+        "type_id" => "4",
+        "name" => "BELÉPŐJEGY TEST 01",
+        "vtsz" => "",
+        "partnumber" => "TICKETTEST01",
+        "product_unit_id" => 1,
+        "price" => 3500,
+        "currency_id" => 1,
+        "tax_id" => 1,
+
+        // jegy-specifikus mezők a product_group szinten (opcionális):
+        "ticket_type_id" => 1,
+        "ticket_visitor_group_id" => 1,
+        "ticket_age_group_id" => 1,
+    ),
+));
+
+print_r($product_save);
+
+// receptúrás termék
+$product_save = $product_client->save(array(
+    "data" => array(
+        "type_id" => "5",
+        "name" => "RECEPTÚRÁS TERMÉK TEST 01",
+        "vtsz" => "",
+        "partnumber" => "RECIPETEST01",
+        "product_unit_id" => 1,
+        "price" => 2490,
+        "currency_id" => 1,
+        "tax_id" => 1,
+        "manufact" => array(
+            array(
+                "product_id" => 125,
+                "product_quantity" => 0.5,
+                "remove" => 0,
+            ),
+            array(
+                "product_id" => 126,
+                "product_quantity" => 1,
+                "remove" => 0,
+            ),
+        ),
+    ),
+));
+
+print_r($product_save);
+
+// egyszerű termék
+$product_save = $product_client->save(array(
+    "data" => array(
+        "type_id" => "6",
+        "name" => "PRODUCT NAME TEST 01",
+        "vtsz" => "",
+        "partnumber" => "PRODUCTPNTEST02",
+        "product_unit_id" => 1,
+        "price" => 1234,
+        "currency_id" => 1,
+        "tax_id" => 1,
+        "quantity_min" => 1,
+        "weight_netto" => 0.8,
+    ),
 ));
 
 print_r($product_save);
